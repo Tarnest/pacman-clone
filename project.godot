@@ -28,6 +28,10 @@ gdscript/warnings/unsafe_call_argument=2
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg")
+
 [input]
 
 move_up={
