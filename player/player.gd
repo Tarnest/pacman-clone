@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var speed: int = 50
 var direction: Vector2 = Vector2.ZERO
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("move_up"):
 		direction = Vector2.UP
 	elif Input.is_action_just_pressed("move_down"):
