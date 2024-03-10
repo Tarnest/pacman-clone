@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cwernmkoda3v6"]
+[gd_scene load_steps=13 format=3 uid="uid://cwernmkoda3v6"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_qs7mr"]
 [ext_resource type="Texture2D" uid="uid://cjuq5bvl6sqn" path="res://player/pacman-spritesheet.png" id="2_mgs8p"]
@@ -60,8 +60,13 @@ size = Vector2(2, 15)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2td1"]
 size = Vector2(2, 15)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_3mge4"]
+radius = 6.0
+
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 0
+motion_mode = 1
+safe_margin = 0.01
 script = ExtResource("1_qs7mr")
 speed = 100
 
@@ -71,6 +76,7 @@ texture = ExtResource("2_mgs8p")
 hframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_4blfg")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
@@ -83,8 +89,10 @@ libraries = {
 }
 
 [node name="Areas" type="Node2D" parent="."]
+visible = false
 
 [node name="Top" type="Area2D" parent="Areas"]
+collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Top"]
@@ -92,6 +100,7 @@ position = Vector2(0, -7.5)
 shape = SubResource("RectangleShape2D_bigjk")
 
 [node name="Bottom" type="Area2D" parent="Areas"]
+collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Bottom"]
@@ -99,6 +108,7 @@ position = Vector2(0, 7.5)
 shape = SubResource("RectangleShape2D_1pc07")
 
 [node name="Left" type="Area2D" parent="Areas"]
+collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Left"]
@@ -106,8 +116,15 @@ position = Vector2(-7.5, 0)
 shape = SubResource("RectangleShape2D_konrh")
 
 [node name="Right" type="Area2D" parent="Areas"]
+collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Right"]
 position = Vector2(7.5, 0)
 shape = SubResource("RectangleShape2D_d2td1")
+
+[node name="CoinRadius" type="Area2D" parent="." groups=["Coin_Eater"]]
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoinRadius"]
+shape = SubResource("CircleShape2D_3mge4")
