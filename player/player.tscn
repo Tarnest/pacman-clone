@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwernmkoda3v6"]
+[gd_scene load_steps=12 format=3 uid="uid://cwernmkoda3v6"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_qs7mr"]
 [ext_resource type="Texture2D" uid="uid://cjuq5bvl6sqn" path="res://player/pacman-spritesheet.png" id="2_mgs8p"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dabb2"]
-radius = 8.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4blfg"]
+size = Vector2(15, 15)
 
 [sub_resource type="Animation" id="Animation_3srns"]
 resource_name = "moving"
@@ -48,7 +48,20 @@ _data = {
 "stopped": SubResource("Animation_pq55u")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bigjk"]
+size = Vector2(15, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1pc07"]
+size = Vector2(15, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_konrh"]
+size = Vector2(2, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2td1"]
+size = Vector2(2, 15)
+
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 0
 script = ExtResource("1_qs7mr")
 speed = 100
 
@@ -58,9 +71,43 @@ texture = ExtResource("2_mgs8p")
 hframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_dabb2")
+shape = SubResource("RectangleShape2D_4blfg")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(10, 0)
+collision_mask = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_wjwpd")
 }
+
+[node name="Areas" type="Node2D" parent="."]
+
+[node name="Top" type="Area2D" parent="Areas"]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Top"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_bigjk")
+
+[node name="Bottom" type="Area2D" parent="Areas"]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Bottom"]
+position = Vector2(0, 7.5)
+shape = SubResource("RectangleShape2D_1pc07")
+
+[node name="Left" type="Area2D" parent="Areas"]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Left"]
+position = Vector2(-7.5, 0)
+shape = SubResource("RectangleShape2D_konrh")
+
+[node name="Right" type="Area2D" parent="Areas"]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Right"]
+position = Vector2(7.5, 0)
+shape = SubResource("RectangleShape2D_d2td1")
