@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://main/main.gd" id="1_plyro"]
 [ext_resource type="PackedScene" uid="uid://csjq745y0no4x" path="res://assets/tileset/tilemap.tscn" id="2_b1gsu"]
 [ext_resource type="Script" path="res://main/tp.gd" id="4_ebsgq"]
-[ext_resource type="PackedScene" uid="uid://df4wrl6xjfcgt" path="res://pellets/pellet.tscn" id="5_nwo6e"]
+[ext_resource type="PackedScene" uid="uid://b7le4ft76txpn" path="res://pellets/pellets_tilemap.tscn" id="5_76sju"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_1dri7"]
 
@@ -56,76 +56,35 @@ texture = SubResource("CanvasTexture_1dri7")
 position = Vector2(5.5, 0)
 shape = SubResource("RectangleShape2D_m7to3")
 
-[node name="Pellets" type="Node2D" parent="."]
+[node name="PelletsTilemap" parent="." instance=ExtResource("5_76sju")]
+layer_0/tile_data = PackedInt32Array(1376325, 0, 65536, 1769541, 0, 65536, 2097221, 0, 65536, 852037, 0, 65536, 852041, 0, 65536, 852045, 0, 65536, 852049, 0, 65536, 852053, 0, 65536, 852057, 0, 65536, 852061, 0, 65536, 852065, 0, 65536, 852069, 0, 65536, 852073, 0, 65536, 852077, 0, 65536, 852081, 0, 65536, 852093, 0, 65536, 852097, 0, 65536, 852101, 0, 65536, 852105, 0, 65536, 852109, 0, 65536, 852113, 0, 65536, 852117, 0, 65536, 852121, 0, 65536, 852125, 0, 65536, 852129, 0, 65536, 852133, 0, 65536, 852137, 0, 65536, 2687055, 0, 65536, 2687045, 0, 65536)
 
-[node name="Pellet" parent="Pellets" instance=ExtResource("5_nwo6e")]
-position = Vector2(140, 27)
-
-[node name="Pellet2" parent="Pellets" instance=ExtResource("5_nwo6e")]
-position = Vector2(148, 27)
-
-[node name="Pellet3" parent="Pellets" instance=ExtResource("5_nwo6e")]
-position = Vector2(156, 27)
-
-[node name="Pellet4" parent="Pellets" instance=ExtResource("5_nwo6e")]
-position = Vector2(164, 27)
-
-[node name="Pellet5" parent="Pellets" instance=ExtResource("5_nwo6e")]
-position = Vector2(172, 27)
-
-[node name="Pellet6" parent="Pellets" instance=ExtResource("5_nwo6e")]
-position = Vector2(180, 27)
-
-[node name="Pellet7" parent="Pellets" instance=ExtResource("5_nwo6e")]
-position = Vector2(188, 27)
-
-[node name="Pellet8" parent="Pellets" instance=ExtResource("5_nwo6e")]
-position = Vector2(196, 27)
-
-[node name="Pellet9" parent="Pellets" instance=ExtResource("5_nwo6e")]
-position = Vector2(204, 27)
-
-[node name="Pellet10" parent="Pellets" instance=ExtResource("5_nwo6e")]
-position = Vector2(212, 27)
-
-[node name="Pellet11" parent="Pellets" instance=ExtResource("5_nwo6e")]
-position = Vector2(220, 27)
-
-[node name="Pellet12" parent="Pellets" instance=ExtResource("5_nwo6e")]
-position = Vector2(228, 27)
-
-[node name="Pellet13" parent="Pellets" instance=ExtResource("5_nwo6e")]
-position = Vector2(252, 27)
-
-[node name="Pellet14" parent="Pellets" instance=ExtResource("5_nwo6e")]
-position = Vector2(260, 27)
-
-[node name="Pellet15" parent="Pellets" instance=ExtResource("5_nwo6e")]
-position = Vector2(268, 27)
-
-[node name="Pellet16" parent="Pellets" instance=ExtResource("5_nwo6e")]
-position = Vector2(276, 27)
-
-[node name="Pellet17" parent="Pellets" instance=ExtResource("5_nwo6e")]
-position = Vector2(284, 27)
-
-[node name="Pellet18" parent="Pellets" instance=ExtResource("5_nwo6e")]
-position = Vector2(292, 27)
-
-[node name="Pellet19" parent="Pellets" instance=ExtResource("5_nwo6e")]
-position = Vector2(300, 27)
-
-[node name="Pellet20" parent="Pellets" instance=ExtResource("5_nwo6e")]
-position = Vector2(308, 27)
-
-[node name="Pellet21" parent="Pellets" instance=ExtResource("5_nwo6e")]
-position = Vector2(316, 27)
-
-[node name="Pellet22" parent="Pellets" instance=ExtResource("5_nwo6e")]
-position = Vector2(324, 27)
-
-[node name="Pellet23" parent="Pellets" instance=ExtResource("5_nwo6e")]
-position = Vector2(332, 27)
-
-[node name="Pellet24" parent="Pellets" instance=ExtResource("5_nwo6e")]
-position = Vector2(340, 27)
+[connection signal="area_entered" from="PelletsTilemap/Pellet" to="PelletsTilemap/Pellet" method="_on_area_entered"]
+[connection signal="area_entered" from="PelletsTilemap/@Area2D@26823" to="PelletsTilemap/@Area2D@26823" method="_on_area_entered"]
+[connection signal="area_entered" from="PelletsTilemap/@Area2D@26824" to="PelletsTilemap/@Area2D@26824" method="_on_area_entered"]
+[connection signal="area_entered" from="PelletsTilemap/@Area2D@26825" to="PelletsTilemap/@Area2D@26825" method="_on_area_entered"]
+[connection signal="area_entered" from="PelletsTilemap/@Area2D@26826" to="PelletsTilemap/@Area2D@26826" method="_on_area_entered"]
+[connection signal="area_entered" from="PelletsTilemap/@Area2D@26827" to="PelletsTilemap/@Area2D@26827" method="_on_area_entered"]
+[connection signal="area_entered" from="PelletsTilemap/@Area2D@26828" to="PelletsTilemap/@Area2D@26828" method="_on_area_entered"]
+[connection signal="area_entered" from="PelletsTilemap/@Area2D@26829" to="PelletsTilemap/@Area2D@26829" method="_on_area_entered"]
+[connection signal="area_entered" from="PelletsTilemap/@Area2D@26830" to="PelletsTilemap/@Area2D@26830" method="_on_area_entered"]
+[connection signal="area_entered" from="PelletsTilemap/@Area2D@26831" to="PelletsTilemap/@Area2D@26831" method="_on_area_entered"]
+[connection signal="area_entered" from="PelletsTilemap/@Area2D@26832" to="PelletsTilemap/@Area2D@26832" method="_on_area_entered"]
+[connection signal="area_entered" from="PelletsTilemap/@Area2D@26833" to="PelletsTilemap/@Area2D@26833" method="_on_area_entered"]
+[connection signal="area_entered" from="PelletsTilemap/@Area2D@26834" to="PelletsTilemap/@Area2D@26834" method="_on_area_entered"]
+[connection signal="area_entered" from="PelletsTilemap/@Area2D@26835" to="PelletsTilemap/@Area2D@26835" method="_on_area_entered"]
+[connection signal="area_entered" from="PelletsTilemap/@Area2D@26836" to="PelletsTilemap/@Area2D@26836" method="_on_area_entered"]
+[connection signal="area_entered" from="PelletsTilemap/@Area2D@26837" to="PelletsTilemap/@Area2D@26837" method="_on_area_entered"]
+[connection signal="area_entered" from="PelletsTilemap/@Area2D@26838" to="PelletsTilemap/@Area2D@26838" method="_on_area_entered"]
+[connection signal="area_entered" from="PelletsTilemap/@Area2D@26839" to="PelletsTilemap/@Area2D@26839" method="_on_area_entered"]
+[connection signal="area_entered" from="PelletsTilemap/@Area2D@26840" to="PelletsTilemap/@Area2D@26840" method="_on_area_entered"]
+[connection signal="area_entered" from="PelletsTilemap/@Area2D@26841" to="PelletsTilemap/@Area2D@26841" method="_on_area_entered"]
+[connection signal="area_entered" from="PelletsTilemap/@Area2D@26842" to="PelletsTilemap/@Area2D@26842" method="_on_area_entered"]
+[connection signal="area_entered" from="PelletsTilemap/@Area2D@26843" to="PelletsTilemap/@Area2D@26843" method="_on_area_entered"]
+[connection signal="area_entered" from="PelletsTilemap/@Area2D@26844" to="PelletsTilemap/@Area2D@26844" method="_on_area_entered"]
+[connection signal="area_entered" from="PelletsTilemap/@Area2D@26845" to="PelletsTilemap/@Area2D@26845" method="_on_area_entered"]
+[connection signal="area_entered" from="PelletsTilemap/@Area2D@26846" to="PelletsTilemap/@Area2D@26846" method="_on_area_entered"]
+[connection signal="area_entered" from="PelletsTilemap/@Area2D@26847" to="PelletsTilemap/@Area2D@26847" method="_on_area_entered"]
+[connection signal="area_entered" from="PelletsTilemap/@Area2D@26848" to="PelletsTilemap/@Area2D@26848" method="_on_area_entered"]
+[connection signal="area_entered" from="PelletsTilemap/@Area2D@26849" to="PelletsTilemap/@Area2D@26849" method="_on_area_entered"]
+[connection signal="area_entered" from="PelletsTilemap/@Area2D@26850" to="PelletsTilemap/@Area2D@26850" method="_on_area_entered"]
