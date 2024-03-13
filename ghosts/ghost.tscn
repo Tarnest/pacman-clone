@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmwikme3qm3sk"]
+
+[ext_resource type="Script" path="res://state_machine/state_machine.gd" id="1_431b1"]
+[ext_resource type="Script" path="res://ghosts/ghost.gd" id="1_ckhot"]
+[ext_resource type="Texture2D" uid="uid://b7d0m7qi7k4j4" path="res://ghosts/blinky.png" id="2_p7i6v"]
+[ext_resource type="Script" path="res://ghosts/states/scatter.gd" id="3_23c28"]
+[ext_resource type="Script" path="res://ghosts/states/chase.gd" id="5_6kci1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fxpm"]
+size = Vector2(14, 16)
+
+[node name="Ghost" type="CharacterBody2D"]
+texture_filter = 1
+script = ExtResource("1_ckhot")
+speed = 100
+ghost_texture = ExtResource("2_p7i6v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("2_p7i6v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_5fxpm")
+
+[node name="StateMachine" type="Node2D" parent="." node_paths=PackedStringArray("state")]
+script = ExtResource("1_431b1")
+state = NodePath("Scatter")
+
+[node name="Scatter" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("actor")]
+script = ExtResource("3_23c28")
+actor = NodePath("../..")
+
+[node name="ScatterTimer" type="Timer" parent="StateMachine/Scatter"]
+wait_time = 3.0
+
+[node name="Chase" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("actor")]
+script = ExtResource("5_6kci1")
+actor = NodePath("../..")
