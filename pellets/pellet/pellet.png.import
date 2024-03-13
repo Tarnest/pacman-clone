@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3ojrbs2y0wcp"
-path="res://.godot/imported/pellet.png-119a35012a2deec38fdac0c0aad55372.ctex"
+path="res://.godot/imported/pellet.png-d23d4f037a7f52d013044fb0b80f4e38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pellets/pellet.png"
-dest_files=["res://.godot/imported/pellet.png-119a35012a2deec38fdac0c0aad55372.ctex"]
+source_file="res://pellets/pellet/pellet.png"
+dest_files=["res://.godot/imported/pellet.png-d23d4f037a7f52d013044fb0b80f4e38.ctex"]
 
 [params]
 

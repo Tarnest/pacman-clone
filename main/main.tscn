@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://chqphu1vmxoct"]
+[gd_scene load_steps=10 format=3 uid="uid://chqphu1vmxoct"]
 
 [ext_resource type="PackedScene" uid="uid://cwernmkoda3v6" path="res://player/player.tscn" id="1_k61tx"]
 [ext_resource type="Script" path="res://main/main.gd" id="1_plyro"]
 [ext_resource type="PackedScene" uid="uid://csjq745y0no4x" path="res://assets/tileset/tilemap.tscn" id="2_b1gsu"]
 [ext_resource type="Script" path="res://main/tp.gd" id="4_ebsgq"]
 [ext_resource type="PackedScene" uid="uid://b7le4ft76txpn" path="res://pellets/pellets_tilemap.tscn" id="5_76sju"]
+[ext_resource type="PackedScene" uid="uid://den4oa67phu0i" path="res://pellets/power_pellet/power_pellet.tscn" id="6_uybu3"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_1dri7"]
 
@@ -57,34 +58,18 @@ position = Vector2(5.5, 0)
 shape = SubResource("RectangleShape2D_m7to3")
 
 [node name="PelletsTilemap" parent="." instance=ExtResource("5_76sju")]
-layer_0/tile_data = PackedInt32Array(1376325, 0, 65536, 1769541, 0, 65536, 2097221, 0, 65536, 852037, 0, 65536, 852041, 0, 65536, 852045, 0, 65536, 852049, 0, 65536, 852053, 0, 65536, 852057, 0, 65536, 852061, 0, 65536, 852065, 0, 65536, 852069, 0, 65536, 852073, 0, 65536, 852077, 0, 65536, 852081, 0, 65536, 852093, 0, 65536, 852097, 0, 65536, 852101, 0, 65536, 852105, 0, 65536, 852109, 0, 65536, 852113, 0, 65536, 852117, 0, 65536, 852121, 0, 65536, 852125, 0, 65536, 852129, 0, 65536, 852133, 0, 65536, 852137, 0, 65536, 2687055, 0, 65536, 2687045, 0, 65536)
+layer_0/tile_data = PackedInt32Array(852037, 0, 65536, 852041, 0, 65536, 852045, 0, 65536, 852049, 0, 65536, 852053, 0, 65536, 852057, 0, 65536, 852061, 0, 65536, 852065, 0, 65536, 852069, 0, 65536, 852073, 0, 65536, 852077, 0, 65536, 852081, 0, 65536, 852093, 0, 65536, 852097, 0, 65536, 852101, 0, 65536, 852105, 0, 65536, 852109, 0, 65536, 852113, 0, 65536, 852117, 0, 65536, 852121, 0, 65536, 852125, 0, 65536, 852129, 0, 65536, 852133, 0, 65536, 852137, 0, 65536, 2687045, 0, 65536, 1114181, 0, 65536, 1638469, 0, 65536, 1900613, 0, 65536, 2162757, 0, 65536, 2424901, 0, 65536, 1900617, 0, 65536, 1900621, 0, 65536, 1900625, 0, 65536, 1900629, 0, 65536, 1900633, 0, 65536, 1900637, 0, 65536, 1900641, 0, 65536, 1900645, 0, 65536, 1900649, 0, 65536, 1900653, 0, 65536, 1900657, 0, 65536, 1900661, 0, 65536, 1900665, 0, 65536, 1900669, 0, 65536, 1900673, 0, 65536, 1900677, 0, 65536, 1900681, 0, 65536, 1900685, 0, 65536, 1900689, 0, 65536, 1900693, 0, 65536, 1900697, 0, 65536, 1900701, 0, 65536, 1900705, 0, 65536, 1900709, 0, 65536, 1900713, 0, 65536, 1638569, 0, 65536, 1114281, 0, 65536, 1638549, 0, 65536, 1376405, 0, 65536, 1114261, 0, 65536, 1638525, 0, 65536, 1376381, 0, 65536, 1114237, 0, 65536, 2162825, 0, 65536, 2424969, 0, 65536, 2687113, 0, 65536, 2162857, 0, 65536, 2425001, 0, 65536, 2687145, 0, 65536, 2687141, 0, 65536, 2687137, 0, 65536, 2687133, 0, 65536, 2687129, 0, 65536, 2687125, 0, 65536, 2424981, 0, 65536, 2162837, 0, 65536, 2949269, 0, 65536, 3211413, 0, 65536, 3473557, 0, 65536, 3735701, 0, 65536, 3997845, 0, 65536, 2687109, 0, 65536, 2687105, 0, 65536, 2687101, 0, 65536, 2687089, 0, 65536, 2687085, 0, 65536, 2687081, 0, 65536, 2687077, 0, 65536, 2424933, 0, 65536, 2162789, 0, 65536, 2687049, 0, 65536, 2687053, 0, 65536, 2687057, 0, 65536, 2687061, 0, 65536, 2687065, 0, 65536, 2424921, 0, 65536, 2162777, 0, 65536, 1638489, 0, 65536, 1376345, 0, 65536, 1114201, 0, 65536, 1638513, 0, 65536, 1376369, 0, 65536, 1114225, 0, 65536, 2949209, 0, 65536, 3211353, 0, 65536, 3473497, 0, 65536, 3735641, 0, 65536, 3997785, 0, 65536, 4259929, 0, 65536, 4522073, 0, 65536, 4784217, 0, 65536, 5046361, 0, 65536, 5308505, 0, 65536, 5570649, 0, 65536, 5570645, 0, 65536, 5570641, 0, 65536, 5570637, 0, 65536, 5570633, 0, 65536, 5570629, 0, 65536, 5832773, 0, 65536, 6094917, 0, 65536, 6357065, 0, 65536, 6357069, 0, 65536, 6619213, 0, 65536, 6881357, 0, 65536, 7143501, 0, 65536, 7143497, 0, 65536, 7143493, 0, 65536, 7143505, 0, 65536, 7143509, 0, 65536, 7143513, 0, 65536, 6881369, 0, 65536, 6619225, 0, 65536, 6357081, 0, 65536, 6357085, 0, 65536, 6094937, 0, 65536, 5832793, 0, 65536, 6357089, 0, 65536, 6357093, 0, 65536, 6357097, 0, 65536, 6357101, 0, 65536, 6357105, 0, 65536, 6357117, 0, 65536, 6357121, 0, 65536, 6357125, 0, 65536, 6357129, 0, 65536, 6357133, 0, 65536, 6357137, 0, 65536, 6357141, 0, 65536, 5570653, 0, 65536, 5570657, 0, 65536, 5570661, 0, 65536, 5570665, 0, 65536, 5570669, 0, 65536, 5570673, 0, 65536, 5832817, 0, 65536, 6094961, 0, 65536, 6094973, 0, 65536, 5832829, 0, 65536, 5570685, 0, 65536, 5570689, 0, 65536, 5570693, 0, 65536, 5570697, 0, 65536, 5570701, 0, 65536, 5570705, 0, 65536, 5570709, 0, 65536, 5832853, 0, 65536, 6094997, 0, 65536, 5308565, 0, 65536, 5046421, 0, 65536, 4784277, 0, 65536, 4522133, 0, 65536, 4259989, 0, 65536, 5570713, 0, 65536, 5570717, 0, 65536, 5570721, 0, 65536, 5570725, 0, 65536, 5570729, 0, 65536, 5832873, 0, 65536, 6095017, 0, 65536, 6357157, 0, 65536, 6357153, 0, 65536, 6619297, 0, 65536, 6881441, 0, 65536, 7143585, 0, 65536, 7143581, 0, 65536, 7143577, 0, 65536, 7143573, 0, 65536, 6881429, 0, 65536, 6619285, 0, 65536, 7143589, 0, 65536, 7143593, 0, 65536, 7405737, 0, 65536, 7667881, 0, 65536, 7930025, 0, 65536, 7930021, 0, 65536, 7930017, 0, 65536, 7930013, 0, 65536, 7930009, 0, 65536, 7930005, 0, 65536, 7930001, 0, 65536, 7929997, 0, 65536, 7929993, 0, 65536, 7929989, 0, 65536, 7929985, 0, 65536, 7929981, 0, 65536, 7929977, 0, 65536, 7929973, 0, 65536, 7929969, 0, 65536, 7667825, 0, 65536, 7405681, 0, 65536, 7143537, 0, 65536, 7143533, 0, 65536, 7143529, 0, 65536, 7143525, 0, 65536, 6881381, 0, 65536, 6619237, 0, 65536, 7929965, 0, 65536, 7929961, 0, 65536, 7929957, 0, 65536, 7929953, 0, 65536, 7929949, 0, 65536, 7929945, 0, 65536, 7929941, 0, 65536, 7929937, 0, 65536, 7929933, 0, 65536, 7929929, 0, 65536, 7929925, 0, 65536, 7667781, 0, 65536, 7405637, 0, 65536, 7667837, 0, 65536, 7405693, 0, 65536, 7143549, 0, 65536, 7143553, 0, 65536, 7143557, 0, 65536, 7143561, 0, 65536, 6881417, 0, 65536, 6619273, 0, 65536)
 
-[connection signal="area_entered" from="PelletsTilemap/Pellet" to="PelletsTilemap/Pellet" method="_on_area_entered"]
-[connection signal="area_entered" from="PelletsTilemap/@Area2D@30595" to="PelletsTilemap/@Area2D@30595" method="_on_area_entered"]
-[connection signal="area_entered" from="PelletsTilemap/@Area2D@30596" to="PelletsTilemap/@Area2D@30596" method="_on_area_entered"]
-[connection signal="area_entered" from="PelletsTilemap/@Area2D@30597" to="PelletsTilemap/@Area2D@30597" method="_on_area_entered"]
-[connection signal="area_entered" from="PelletsTilemap/@Area2D@30598" to="PelletsTilemap/@Area2D@30598" method="_on_area_entered"]
-[connection signal="area_entered" from="PelletsTilemap/@Area2D@30599" to="PelletsTilemap/@Area2D@30599" method="_on_area_entered"]
-[connection signal="area_entered" from="PelletsTilemap/@Area2D@30600" to="PelletsTilemap/@Area2D@30600" method="_on_area_entered"]
-[connection signal="area_entered" from="PelletsTilemap/@Area2D@30601" to="PelletsTilemap/@Area2D@30601" method="_on_area_entered"]
-[connection signal="area_entered" from="PelletsTilemap/@Area2D@30602" to="PelletsTilemap/@Area2D@30602" method="_on_area_entered"]
-[connection signal="area_entered" from="PelletsTilemap/@Area2D@30603" to="PelletsTilemap/@Area2D@30603" method="_on_area_entered"]
-[connection signal="area_entered" from="PelletsTilemap/@Area2D@30604" to="PelletsTilemap/@Area2D@30604" method="_on_area_entered"]
-[connection signal="area_entered" from="PelletsTilemap/@Area2D@30605" to="PelletsTilemap/@Area2D@30605" method="_on_area_entered"]
-[connection signal="area_entered" from="PelletsTilemap/@Area2D@30606" to="PelletsTilemap/@Area2D@30606" method="_on_area_entered"]
-[connection signal="area_entered" from="PelletsTilemap/@Area2D@30607" to="PelletsTilemap/@Area2D@30607" method="_on_area_entered"]
-[connection signal="area_entered" from="PelletsTilemap/@Area2D@30608" to="PelletsTilemap/@Area2D@30608" method="_on_area_entered"]
-[connection signal="area_entered" from="PelletsTilemap/@Area2D@30609" to="PelletsTilemap/@Area2D@30609" method="_on_area_entered"]
-[connection signal="area_entered" from="PelletsTilemap/@Area2D@30610" to="PelletsTilemap/@Area2D@30610" method="_on_area_entered"]
-[connection signal="area_entered" from="PelletsTilemap/@Area2D@30611" to="PelletsTilemap/@Area2D@30611" method="_on_area_entered"]
-[connection signal="area_entered" from="PelletsTilemap/@Area2D@30612" to="PelletsTilemap/@Area2D@30612" method="_on_area_entered"]
-[connection signal="area_entered" from="PelletsTilemap/@Area2D@30613" to="PelletsTilemap/@Area2D@30613" method="_on_area_entered"]
-[connection signal="area_entered" from="PelletsTilemap/@Area2D@30614" to="PelletsTilemap/@Area2D@30614" method="_on_area_entered"]
-[connection signal="area_entered" from="PelletsTilemap/@Area2D@30615" to="PelletsTilemap/@Area2D@30615" method="_on_area_entered"]
-[connection signal="area_entered" from="PelletsTilemap/@Area2D@30616" to="PelletsTilemap/@Area2D@30616" method="_on_area_entered"]
-[connection signal="area_entered" from="PelletsTilemap/@Area2D@30617" to="PelletsTilemap/@Area2D@30617" method="_on_area_entered"]
-[connection signal="area_entered" from="PelletsTilemap/@Area2D@30618" to="PelletsTilemap/@Area2D@30618" method="_on_area_entered"]
-[connection signal="area_entered" from="PelletsTilemap/@Area2D@30619" to="PelletsTilemap/@Area2D@30619" method="_on_area_entered"]
-[connection signal="area_entered" from="PelletsTilemap/@Area2D@30620" to="PelletsTilemap/@Area2D@30620" method="_on_area_entered"]
-[connection signal="area_entered" from="PelletsTilemap/@Area2D@30621" to="PelletsTilemap/@Area2D@30621" method="_on_area_entered"]
-[connection signal="area_entered" from="PelletsTilemap/@Area2D@30622" to="PelletsTilemap/@Area2D@30622" method="_on_area_entered"]
+[node name="PowerPellets" type="Node2D" parent="."]
+
+[node name="PowerPellet" parent="PowerPellets" instance=ExtResource("6_uybu3")]
+position = Vector2(140, 43)
+
+[node name="PowerPellet2" parent="PowerPellets" instance=ExtResource("6_uybu3")]
+position = Vector2(340, 43)
+
+[node name="PowerPellet3" parent="PowerPellets" instance=ExtResource("6_uybu3")]
+position = Vector2(140, 195)
+
+[node name="PowerPellet4" parent="PowerPellets" instance=ExtResource("6_uybu3")]
+position = Vector2(340, 195)

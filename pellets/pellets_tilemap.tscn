@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b7le4ft76txpn"]
 
-[ext_resource type="PackedScene" uid="uid://df4wrl6xjfcgt" path="res://pellets/pellet.tscn" id="1_kuimd"]
+[ext_resource type="PackedScene" uid="uid://df4wrl6xjfcgt" path="res://pellets/pellet/pellet.tscn" id="1_kuimd"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_jmoel"]
 resource_name = "Pellet"
