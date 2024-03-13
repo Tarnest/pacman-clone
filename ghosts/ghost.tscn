@@ -32,7 +32,7 @@ script = ExtResource("3_23c28")
 actor = NodePath("../..")
 
 [node name="ScatterTimer" type="Timer" parent="StateMachine/Scatter"]
-wait_time = 3.0
+wait_time = 10.0
 
 [node name="Chase" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("actor")]
 script = ExtResource("5_6kci1")

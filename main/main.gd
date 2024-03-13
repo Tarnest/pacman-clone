@@ -1,13 +1,24 @@
 extends Node2D
 
+@onready var tile_map: TileMap = $TileMap
+
 var score: int = 0:
 	set(_score):
 		score = _score
 		# TODO: add updates for score UI
 
+var astar_grid: AStarGrid2D
+var cell_size := Vector2(8, 8)
+
 func _ready() -> void:
 	Globals.pellet_eaten.connect(on_pellet_eaten)
 	Globals.power_pellet_eaten.connect(on_power_pellet_eaten)
+	
+	astar_grid = AStarGrid2D.new()
+	astar_grid.region = tile_map.get_used_rect()
+	astar_grid.cell_size = cell_size
+	astar_grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
+	astar_grid.update()
 
 func on_pellet_eaten() -> void:
 	score += 10
