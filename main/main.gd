@@ -1,11 +1,12 @@
 extends Node2D
 
 @onready var tile_map: TileMap = $TileMap
+@onready var score_label: Label = $UI/Score
 
 var score: int = 0:
 	set(_score):
 		score = _score
-		# TODO: add updates for score UI
+		score_label.text = str(score)
 
 var astar_grid: AStarGrid2D
 var cell_size := Vector2(8, 8)
