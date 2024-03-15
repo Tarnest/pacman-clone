@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmwikme3qm3sk"]
+[gd_scene load_steps=7 format=3 uid="uid://hdwj0snh3qha"]
 
 [ext_resource type="Script" path="res://state_machine/state_machine.gd" id="1_431b1"]
 [ext_resource type="Script" path="res://ghosts/ghost.gd" id="1_ckhot"]
@@ -9,14 +9,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5fxpm"]
 size = Vector2(6, 6)
 
-[node name="Ghost" type="CharacterBody2D"]
+[node name="Ghost" type="Area2D"]
 texture_filter = 1
 script = ExtResource("1_ckhot")
-speed = 45
+speed = 200.0
 ghost_texture = ExtResource("2_p7i6v")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -1)
 texture = ExtResource("2_p7i6v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -46,7 +46,7 @@ func move() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if is_moving:
-		actor.global_position = actor.global_position.move_toward(new_position, _delta * actor.speed)
+		actor.global_position = actor.global_position.move_toward(new_position, actor.speed)
 		
 		if actor.global_position != new_position:
 			return

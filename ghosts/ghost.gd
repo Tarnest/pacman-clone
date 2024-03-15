@@ -1,8 +1,8 @@
 @tool
 class_name Ghost
-extends CharacterBody2D
+extends Area2D
 
-@export var speed: int = 200
+@export var speed: float = 0.75
 @export var ghost_texture: Texture2D
 @export var main: Main
 @export var player: Player
@@ -13,5 +13,6 @@ extends CharacterBody2D
 @onready var chase: Chase = $StateMachine/Chase
 
 func _ready() -> void:
-	scatter.scatter_finished.connect(state_machine.change_state.bind(chase))
+	if not Engine.is_editor_hint():
+		scatter.scatter_finished.connect(state_machine.change_state.bind(chase))
 	sprite.texture = ghost_texture

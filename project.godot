@@ -78,6 +78,7 @@ escape={
 2d_physics/layer_2="Ghost"
 2d_physics/layer_3="Walls"
 2d_physics/layer_4="Pellets"
+2d_physics/layer_5="Intersections"
 
 [rendering]
 
