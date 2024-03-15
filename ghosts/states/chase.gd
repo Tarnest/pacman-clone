@@ -19,6 +19,7 @@ func move() -> void:
 	var astar_grid := actor.main.astar_grid
 	var tile_map := actor.main.tile_map
 	
+	# move forward code
 	if Vector2i(global_position) != old_position:
 		var tile_to_ignore := tile_map.local_to_map(old_position)
 		astar_grid.set_point_solid(tile_to_ignore, true)
