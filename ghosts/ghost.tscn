@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://ghosts/states/chase.gd" id="5_6kci1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5fxpm"]
-size = Vector2(14, 16)
+size = Vector2(6, 6)
 
 [node name="Ghost" type="CharacterBody2D"]
 texture_filter = 1
@@ -20,7 +20,6 @@ position = Vector2(0, -1)
 texture = ExtResource("2_p7i6v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_5fxpm")
 
 [node name="StateMachine" type="Node2D" parent="." node_paths=PackedStringArray("state")]

@@ -4,6 +4,8 @@ extends CharacterBody2D
 
 @export var speed: int = 200
 @export var ghost_texture: Texture2D
+@export var main: Main
+@export var player: Player
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var state_machine: StateMachine = $StateMachine
