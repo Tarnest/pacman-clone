@@ -12,7 +12,7 @@ size = Vector2(6, 6)
 [node name="Ghost" type="CharacterBody2D"]
 texture_filter = 1
 script = ExtResource("1_ckhot")
-speed = 100
+speed = 45
 ghost_texture = ExtResource("2_p7i6v")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -31,7 +31,7 @@ script = ExtResource("3_23c28")
 actor = NodePath("../..")
 
 [node name="ScatterTimer" type="Timer" parent="StateMachine/Scatter"]
-wait_time = 10.0
+wait_time = 7.0
 
 [node name="Chase" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("actor")]
 script = ExtResource("5_6kci1")

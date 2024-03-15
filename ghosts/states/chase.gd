@@ -3,7 +3,8 @@ extends State
 
 @export var actor: Ghost
 
-var direction := Vector2.DOWN
+var is_moving := false
+var new_position: Vector2
 
 func _enter() -> void:
 	set_physics_process(true)
@@ -11,6 +12,34 @@ func _enter() -> void:
 func _exit() -> void:
 	set_physics_process(false)
 
+func move() -> void:
+	# TODO: only let ghost move forward
+	
+	var astar_grid := actor.main.astar_grid
+	var tile_map := actor.main.tile_map
+	
+	var path := astar_grid.get_id_path(
+		tile_map.local_to_map(actor.global_position),
+		tile_map.local_to_map(actor.player.global_position)
+	)
+	
+	path.pop_front()
+	
+	if path.is_empty():
+		print_debug("Can't find path")
+		return
+	
+	new_position = tile_map.map_to_local(path[0])
+	
+	is_moving = true
+
 func _physics_process(_delta: float) -> void:
-	actor.velocity = direction.normalized() * actor.speed
-	actor.move_and_slide()
+	if is_moving:
+		actor.global_position = actor.global_position.move_toward(new_position, _delta * actor.speed)
+		
+		if actor.global_position != new_position:
+			return
+		
+		is_moving = false
+	
+	move()

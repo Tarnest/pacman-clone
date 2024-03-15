@@ -1,8 +1,9 @@
 class_name Main
 extends Node2D
 
-@onready var tile_map: TileMap = $TileMap
-@onready var score_label: Label = $UI/Score
+@onready var tile_map: TileMap = $PathingTileMap
+@onready var camera: Camera2D = $Camera2D
+@onready var score_label: Label = %ScoreLabel
 
 var score: int = 0:
 	set(_score):
@@ -11,10 +12,14 @@ var score: int = 0:
 
 var astar_grid: AStarGrid2D
 var cell_size := Vector2(8, 8)
+var tile_pixels: int = 248
 
 func _ready() -> void:
 	Globals.pellet_eaten.connect(on_pellet_eaten)
 	Globals.power_pellet_eaten.connect(on_power_pellet_eaten)
+	
+	var screen_size := get_viewport_rect().size
+	camera.position = Vector2(screen_size.x / 4 + 4, screen_size.y / 2 - (screen_size.y - tile_pixels) / 2)
 	
 	astar_grid = AStarGrid2D.new()
 	astar_grid.region = tile_map.get_used_rect()
@@ -33,10 +38,10 @@ func _ready() -> void:
 			)
 			
 			var tile_data := tile_map.get_cell_tile_data(0, tile_position)
+			
 			if tile_data == null or not tile_data.get_custom_data("walkable"):
-				astar_grid.set_point_solid(tile_position)
-			
-			
+				astar_grid.set_point_solid(tile_position, true)
+
 func on_pellet_eaten() -> void:
 	score += 10
 
