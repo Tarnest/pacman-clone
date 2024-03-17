@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://state_machine/state_machine.gd" id="1_431b1"]
 [ext_resource type="Script" path="res://ghosts/ghost.gd" id="1_ckhot"]
-[ext_resource type="Texture2D" uid="uid://b7d0m7qi7k4j4" path="res://ghosts/blinky.png" id="2_p7i6v"]
+[ext_resource type="Texture2D" uid="uid://b7d0m7qi7k4j4" path="res://ghosts/sprites/blinky.png" id="2_i08s6"]
 [ext_resource type="Script" path="res://ghosts/states/ghost_scatter.gd" id="4_jrif2"]
 [ext_resource type="Script" path="res://ghosts/states/ghost_chase.gd" id="5_nwnbq"]
 
@@ -12,10 +12,10 @@ size = Vector2(6, 6)
 [node name="Ghost" type="Area2D"]
 texture_filter = 1
 script = ExtResource("1_ckhot")
-ghost_texture = ExtResource("2_p7i6v")
+ghost_texture = ExtResource("2_i08s6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_p7i6v")
+texture = ExtResource("2_i08s6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5fxpm")

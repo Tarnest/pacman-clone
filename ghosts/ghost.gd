@@ -14,6 +14,7 @@ enum GhostType {
 @export var main: Main
 @export var player: Player
 @export var ghost_type: GhostType = GhostType.RED
+@export var blinky: Ghost
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var state_machine: StateMachine = $StateMachine

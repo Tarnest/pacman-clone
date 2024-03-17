@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7d0m7qi7k4j4"
-path="res://.godot/imported/blinky.png-be48bf221bef462f4bed1038d98570de.ctex"
+path="res://.godot/imported/blinky.png-a2ddc738da77d6da363c375903b9d787.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ghosts/blinky.png"
-dest_files=["res://.godot/imported/blinky.png-be48bf221bef462f4bed1038d98570de.ctex"]
+source_file="res://ghosts/sprites/blinky.png"
+dest_files=["res://.godot/imported/blinky.png-a2ddc738da77d6da363c375903b9d787.ctex"]
 
 [params]
 
