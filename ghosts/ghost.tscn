@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://state_machine/state_machine.gd" id="1_431b1"]
 [ext_resource type="Script" path="res://ghosts/ghost.gd" id="1_ckhot"]
 [ext_resource type="Texture2D" uid="uid://b7d0m7qi7k4j4" path="res://ghosts/blinky.png" id="2_p7i6v"]
-[ext_resource type="Script" path="res://ghosts/states/scatter.gd" id="3_23c28"]
-[ext_resource type="Script" path="res://ghosts/states/chase.gd" id="5_6kci1"]
+[ext_resource type="Script" path="res://ghosts/states/ghost_scatter.gd" id="4_jrif2"]
+[ext_resource type="Script" path="res://ghosts/states/ghost_chase.gd" id="5_nwnbq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5fxpm"]
 size = Vector2(6, 6)
@@ -12,7 +12,6 @@ size = Vector2(6, 6)
 [node name="Ghost" type="Area2D"]
 texture_filter = 1
 script = ExtResource("1_ckhot")
-speed = 200.0
 ghost_texture = ExtResource("2_p7i6v")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -21,17 +20,34 @@ texture = ExtResource("2_p7i6v")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5fxpm")
 
+[node name="Rays" type="Node2D" parent="."]
+
+[node name="ForwardRay" type="RayCast2D" parent="Rays"]
+unique_name_in_owner = true
+target_position = Vector2(10, 0)
+collision_mask = 4
+
+[node name="LeftRay" type="RayCast2D" parent="Rays"]
+unique_name_in_owner = true
+target_position = Vector2(0, -10)
+collision_mask = 4
+
+[node name="RightRay" type="RayCast2D" parent="Rays"]
+unique_name_in_owner = true
+target_position = Vector2(0, 10)
+collision_mask = 4
+
 [node name="StateMachine" type="Node2D" parent="." node_paths=PackedStringArray("state")]
 script = ExtResource("1_431b1")
 state = NodePath("Scatter")
 
 [node name="Scatter" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("actor")]
-script = ExtResource("3_23c28")
+script = ExtResource("4_jrif2")
 actor = NodePath("../..")
 
 [node name="ScatterTimer" type="Timer" parent="StateMachine/Scatter"]
 wait_time = 7.0
 
 [node name="Chase" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("actor")]
-script = ExtResource("5_6kci1")
+script = ExtResource("5_nwnbq")
 actor = NodePath("../..")

@@ -10,4 +10,3 @@ func change_state(new_state: State) -> void:
 	state._exit()
 	state = new_state
 	state._enter()
-	
